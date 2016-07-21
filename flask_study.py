@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from flask import Flask, request, make_response, render_template, redirect, url_for
 
 app = Flask(__name__)
