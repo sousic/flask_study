@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+    {%  if session.logged_in %}
+
+    {% endif %}
+    <ul class="entries">
+    {% for entry in entries %}
+        <li><h2>{{ entry[0] }}</h2>{{ entry[1]|safe }}</li>
+    {% else %}
+        <li><em>Not Entries</em></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
