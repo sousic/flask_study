@@ -17,9 +17,9 @@ class Cookies():
     def setcookie():
         if request.method == 'POST':
                 username = request.form['username']
-                response = make_response()
+                #쿠키 초기화 오류 수정
+                response = make_response(redirect(url_for('cookies.getcookie')))
                 #response = make_response(render_template('readcookie.html')) #쿠키 저장후 바로 리다이렉트 처리 할때
                 response.set_cookie('username', username)
 
-                #return response
-                return redirect(url_for('cookies.getcookie'))
+                return response

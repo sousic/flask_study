@@ -5,8 +5,12 @@ app = Flask(__name__)
 
 from views import cookies
 from views import main
+from views import fileUpload
 app.register_blueprint(cookies.Cookies.mod)
 app.register_blueprint(main.Main.mod)
+app.register_blueprint(fileUpload.fileUpload.mod)
+
+fileUpload.root_path = app.root_path
 
 if __name__ == '__main__':
     app.debug = True

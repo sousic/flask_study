@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+        <div>
+            <label for="basic-url">파일 업로드</label>
+            <form action="{{ url_for('fileUpload.file_upload') }}" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <span class="input-group-addon">쿠키명 : </span>
+                    <input type="file" id="file" name="file" id="basic-url" aria-describedby="basic-addon3" class="form-control"/>
+                </div>
+                <br/>
+                <button type="submit"class="btn btn-default">저장</button>
+            </form>
+        </div>
+
+        {% if filename %}
+        <hr>
+        <div>
+            <label>업로드된 파일명 : {{ filename }}</label>
+        </div>
+        {%  endif %}
+{% endblock %}
