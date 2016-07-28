@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+        <div>
+            <label for="basic-url">세션 처리</label>
+            {% if sessionName %}
+            <div class="input-group">
+                로그인된 세션 명칭 : {{ sessionName }}
+            </div>
+            <br/>
+            <a href="{{ url_for('sessions.logout') }}" class="btn btn-primary">로그아웃</a>
+            {%  else %}
+            <form action="{{ url_for('sessions.login') }}" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <span class="input-group-addon">세션명칭 : </span>
+                    <input type="text" id="username" name="username" id="basic-url" aria-describedby="basic-addon3" class="form-control"/>
+                </div>
+                <br/>
+                <button type="submit"class="btn btn-default">저장</button>
+            </form>
+            {% endif %}
+        </div>
+{% endblock %}

@@ -14,7 +14,7 @@ class fileUpload():
     def index():
         return render_template('fileupload/index.html')
 
-    @mod.route('/file_upload/', methods = ['GET', 'POST'])
+    @mod.route('/file_upload/', methods = ['POST'])
     def file_upload():
 
         if request.method == 'POST':
