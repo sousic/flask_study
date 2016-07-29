@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from flask import Flask, request, make_response, render_template, redirect, url_for, Blueprint
 
-class Cookies():
+class Cookies:
     mod = Blueprint('cookies', __name__, url_prefix='/cookies')
 
     @mod.route('/')

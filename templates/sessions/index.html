@@ -3,6 +3,14 @@
         <div>
             <label for="basic-url">세션 처리</label>
             {% if sessionName %}
+{#                {% with messages = get_flashed_messages() %}#}
+{#                    {% if messages %}#}
+{#                        {% for message in messages %}#}
+{#                            {{ message }}#}
+{#                        {% endfor %}#}
+{#                    {% endif %}#}
+{#                {% endwith %}#}
+                {{ get_flashed_messages()|flashed_messages_helper() }}
             <div class="input-group">
                 로그인된 세션 명칭 : {{ sessionName }}
             </div>

@@ -1,14 +1,16 @@
 # -*- coding: UTF-8 -*-
 from flask import Flask, request, session, redirect, render_template, url_for, Blueprint, escape
+from flask import flash
 
-class Session():
+
+class Session:
     mod = Blueprint('sessions', __name__, url_prefix='/sessions')
 
     @mod.route('/')
     def index():
         #세션 유무 확인
         if 'username' in session:
-            sessionName = escape(session['username'])
+            sessionName = session['username']
         else:
             sessionName = None
 
@@ -19,6 +21,9 @@ class Session():
         if request.method == 'POST':
             #세션 저장
             session['username'] = request.form['username']
+
+        #플래싱
+        flash('로그인 성공')
 
         return redirect(url_for('sessions.index'))
 

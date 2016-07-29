@@ -7,7 +7,7 @@ root_path = ''
 save_path = 'upload/'
 
 
-class fileUpload():
+class fileUpload:
     mod = Blueprint('fileUpload', __name__, url_prefix='/fileUpload')
 
     @mod.route('/')

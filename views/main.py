@@ -2,7 +2,7 @@
 from flask import  Flask, Blueprint, render_template
 
 
-class Main():
+class Main:
     mod = Blueprint('main', __name__, )
 
     @mod.route('/')
