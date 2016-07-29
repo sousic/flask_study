@@ -12,7 +12,6 @@ app = Flask(__name__)
 app.secret_key = 'session_tester'
 
 #필터 설정
-#app.jinja_env.filters['flashed_messages_helper'] = flashed_helper.flashed_messages_helper
 flashed_helper.flashed_helper(app)
 
 app.register_blueprint(cookies.Cookies.mod)
